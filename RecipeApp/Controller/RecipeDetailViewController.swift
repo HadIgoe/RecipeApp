@@ -9,30 +9,26 @@
 import UIKit
 import LazyImage
 
-class RecipeDetailViewController: UIViewController {
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var largeRecipeImage: UIImageView!
-    @IBOutlet weak var instructionsLabel: UILabel!
-    @IBOutlet weak var ingredientsLabel: UILabel!
+class RecipeDetailViewController: UIViewController, StoryBoarded {
     @IBOutlet weak var recipeTitle: UILabel!
-    
-    var recipeInstructions = ""
-    var recipeIngredients = ""
-    var recipeImage = ""
-    var recipeName = ""
+    @IBOutlet weak var largeRecipeImage: UIImageView!
+    @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     lazy var lazyImage: LazyImage = LazyImage()
+    var meal: Meal?
+    weak var coordinator: ApplicationCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        instructionsLabel.text = recipeInstructions
-        recipeTitle.text = recipeName
-        lazyImage.show(imageView: largeRecipeImage, url: recipeImage)
+    private func configureView() {
+        guard let meal = meal else { return }
+        recipeTitle.text = meal.mealName
+        lazyImage.show(imageView: largeRecipeImage, url: meal.mealImage)
+        ingredientsLabel.text = meal.ingredient
+        instructionsLabel.text = meal.instructions
     }
-   
 }

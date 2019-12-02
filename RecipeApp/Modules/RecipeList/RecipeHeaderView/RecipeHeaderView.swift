@@ -8,13 +8,14 @@
 
 import UIKit
 
-class RecipeAppHeaderView: UITableViewHeaderFooterView {
+class RecipeHeaderView: UITableViewHeaderFooterView {
    
     @IBOutlet weak var recipeSearchBar: UISearchBar!
     
     let recipeSearchPlaceHolder = "Search recipes"
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         recipeSearchBar.placeholder = recipeSearchPlaceHolder
     }
 }

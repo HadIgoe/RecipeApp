@@ -1,24 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
   - LazyImage (7.0.1)
-  - SwiftLint (0.37.0)
 
 DEPENDENCIES:
   - Alamofire
   - LazyImage
-  - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - LazyImage
-    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
-  SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
 
-PODFILE CHECKSUM: da5f18e1b3c762869ed9a0768ede6bf76e09c66e
+PODFILE CHECKSUM: 98e63a149b0c268708bf8cc41a50adef7c11b5d7
 
 COCOAPODS: 1.8.4

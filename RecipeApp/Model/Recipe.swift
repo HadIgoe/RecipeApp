@@ -13,7 +13,15 @@ struct Recipe: Codable {
 }
 
 struct Meal: Codable {
-    var strMeal: String
-    var strInstructions: String
-    var strMealThumb: String
+    var mealName: String
+    var instructions: String
+    var mealImage: String
+    var ingredient: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case mealName = "strMeal"
+        case instructions = "strInstructions"
+        case mealImage = "strMealThumb"
+        case ingredient = "strIngredient1"
+    }
 }

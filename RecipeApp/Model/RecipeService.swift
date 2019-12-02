@@ -11,20 +11,15 @@ import Alamofire
 
 class RecipeService {
     
-    private let RECIPEURL = "https://www.themealdb.com/api/json/v1/1/search.php?f=p"
+    private let URL = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
     
     var recipes: Recipe?
-    
-    public func fetchRecipe(recipesSearch: String) {
-        
-    }
-    
+
     public func fetchData(completion: @escaping ([Meal], Bool) -> Void) {
-        Alamofire.request(RECIPEURL, method: .get).responseJSON { response in
+        Alamofire.request(URL, method: .get).responseJSON { response in
             if response.result.isSuccess {
-                guard let data = response.data else {return}
+                guard let data = response.data else { return }
                 if let json = try? JSONDecoder().decode(Recipe.self, from: data) {
-                    print(json)
                     completion(json.meals, false)
                 } else {
                     completion([], true)

@@ -14,8 +14,8 @@
             filePath = "RecipeApp/Controller/RecipeListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "RecipeListViewController"
             landmarkType = "3">
             <Locations>
@@ -115,54 +115,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F8EBDB6-3EDA-4922-9BEF-76EC316678FF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecipeApp/Model/RecipeService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "fetchRecipe(recipesSearch:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4F8EBDB6-3EDA-4922-9BEF-76EC316678FF - 434cd04444f27cec"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecipeApp.RecipeService.fetchData(completion: (Swift.Array&lt;RecipeApp.Meal&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "RecipeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadley.igoe/PersonalProj/RecipeApp/RecipeApp/Model/RecipeService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "4F8EBDB6-3EDA-4922-9BEF-76EC316678FF - 73b910dc7074409f"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in RecipeApp.RecipeService.fetchData(completion: (Swift.Array&lt;RecipeApp.Meal&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "RecipeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hadley.igoe/PersonalProj/RecipeApp/RecipeApp/Model/RecipeService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "159">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BD191E7A-FD19-440C-ACD4-4672CBA7DCD9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -173,7 +125,7 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "RecipeListViewController"
-            landmarkType = "21">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,10 +138,58 @@
             filePath = "RecipeApp/Controller/RecipeListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF5A825C-2867-4FE6-9E0D-C835BD831BAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeApp/View/Cell/RecipeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "configureCell(meal:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DA6059D-F897-445B-8377-8725B24A4C5D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeApp/Controller/RecipeListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "RecipeListViewController"
             landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D2EE41A-1645-4676-9E00-1151F896D4AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeApp/Model/RecipeService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "fetchData(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

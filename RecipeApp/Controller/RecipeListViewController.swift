@@ -9,66 +9,69 @@
 import UIKit
 
 class RecipeListViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var errorView: UIView!
     var recipeService = RecipeService()
-    var recipes: [Meal] = []
+    var recipes: [Meal]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        errorView.isHidden = true
         loadData()
     }
     
     private func loadData() {
         recipeService.fetchData { data, error in
-            !error ? self.recipes = data: print("There was an error...")
-            !error ? self.setupTableView(): print("There was an error...")
+            !error ? self.recipes = data: self.showErrorMessage()
+            !error ? self.setupTableView(): self.showErrorMessage()
         }
     }
     
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        let headerNib = UINib.init(nibName: "RecipeAppHeaderView", bundle: Bundle.main)
-        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "RecipeAppHeaderView")
+        let headerNib = UINib.init(nibName: "RecipeHeaderView", bundle: Bundle.main)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "RecipeHeaderView")
         tableView.reloadData()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+    }
+    
+    private func showErrorMessage() {
+        errorView.isHidden = false
+        tableView.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let reicpeIndex = tableView.indexPathForSelectedRow,
                 let destination = segue.destination as? RecipeDetailViewController else { return }
-            destination.recipeInstructions = recipes[reicpeIndex.row].strInstructions
-            destination.recipeName = recipes[reicpeIndex.row].strMeal
-            destination.recipeImage = recipes[reicpeIndex.row].strMealThumb
+            destination.meal = recipes?[reicpeIndex.row]
         }
     }
 }
-    
 
 extension RecipeListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecipeAppHeaderView") as? RecipeAppHeaderView else {return UIView()}
-        //print(headerView.returnSearchText())
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecipeHeaderView")
+            as? RecipeHeaderView else { return UIView() }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-          return 100
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        return recipes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeAppCell else {return UITableViewCell()}
-        let list = recipes[indexPath.row]
-        cell.configureCell(recipeData: list)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath)
+            as? RecipeCell else { return UITableViewCell() }
+        let meal = recipes?[indexPath.row]
+        cell.configureCell(meal: meal)
         return cell
     }
 }

@@ -15,7 +15,6 @@ class RecipeAppCell: UITableViewCell {
     @IBOutlet weak var mealName: UILabel!
     
     lazy var lazyImage: LazyImage = LazyImage()
-    
     let newSize = CGSize(width: 50, height: 50)
     
     override func awakeFromNib() {
@@ -23,11 +22,11 @@ class RecipeAppCell: UITableViewCell {
     }
     
     public func configureCell(recipeData: Meal) {
+        mealName.text = recipeData.strMeal
         mealImage.image = UIImage(named: "placeholder")
         self.lazyImage.showWithSpinner(imageView: self.mealImage, url: recipeData.strMealThumb, size: newSize) { (error: LazyImageError?) in
             guard let error = error else {return}
             print(error)
         }
-        mealName.text = recipeData.strMeal
     }
 }

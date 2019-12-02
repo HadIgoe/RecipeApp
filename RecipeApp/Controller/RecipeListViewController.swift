@@ -17,7 +17,6 @@ class RecipeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         loadData()
     }
     
@@ -45,15 +44,18 @@ class RecipeListViewController: UIViewController {
             destination.recipeInstructions = recipes[reicpeIndex.row].strInstructions
             destination.recipeName = recipes[reicpeIndex.row].strMeal
             destination.recipeImage = recipes[reicpeIndex.row].strMealThumb
+            destination.recipeIngredients = recipes[reicpeIndex.row].strIngredient1
+            destination.recipeIngredients2 = recipes[reicpeIndex.row].strIngredient2 ?? ""
+            destination.recipeIngredients3 = recipes[reicpeIndex.row].strIngredient3 ?? ""
+            
         }
     }
 }
-    
 
 extension RecipeListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecipeAppHeaderView") as? RecipeAppHeaderView else {return UIView()}
-        //print(headerView.returnSearchText())
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RecipeAppHeaderView")
+            as? RecipeAppHeaderView else {return UIView()}
         return headerView
     }
     
@@ -66,7 +68,8 @@ extension RecipeListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeAppCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath)
+            as? RecipeAppCell else {return UITableViewCell()}
         let list = recipes[indexPath.row]
         cell.configureCell(recipeData: list)
         return cell

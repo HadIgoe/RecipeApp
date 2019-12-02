@@ -14,11 +14,7 @@ class RecipeAppHeaderView: UITableViewHeaderFooterView {
     
     let recipeSearchPlaceHolder = "Search recipes"
     
-      override func awakeFromNib() {
+    override func awakeFromNib() {
         recipeSearchBar.placeholder = recipeSearchPlaceHolder
-      }
-    
-    public func returnSearchText() -> String {
-        return recipeSearchBar.text ?? ""
     }
 }

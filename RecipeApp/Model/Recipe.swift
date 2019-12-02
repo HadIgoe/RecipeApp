@@ -16,4 +16,7 @@ struct Meal: Codable {
     var strMeal: String
     var strInstructions: String
     var strMealThumb: String
+    var strIngredient1: String
+    var strIngredient2: String?
+    var strIngredient3: String?
 }

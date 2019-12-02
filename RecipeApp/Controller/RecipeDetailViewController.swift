@@ -10,9 +10,6 @@ import UIKit
 import LazyImage
 
 class RecipeDetailViewController: UIViewController {
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var largeRecipeImage: UIImageView!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
@@ -20,19 +17,22 @@ class RecipeDetailViewController: UIViewController {
     
     var recipeInstructions = ""
     var recipeIngredients = ""
+    var recipeIngredients2 = ""
+    var recipeIngredients3 = ""
     var recipeImage = ""
     var recipeName = ""
-    
     lazy var lazyImage: LazyImage = LazyImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        recipeDetailsSetup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    private func recipeDetailsSetup() {
+        let formattedIngredients = "\u{2022} \(recipeIngredients) \n \u{2022} \(recipeIngredients2) \n \u{2022} \(recipeIngredients3)"
         instructionsLabel.text = recipeInstructions
         recipeTitle.text = recipeName
         lazyImage.show(imageView: largeRecipeImage, url: recipeImage)
+        ingredientsLabel.text = formattedIngredients
     }
-   
 }

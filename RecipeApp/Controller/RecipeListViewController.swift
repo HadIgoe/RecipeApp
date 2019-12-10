@@ -14,7 +14,9 @@ class RecipeListViewController: UIViewController, StoryBoarded {
     
     var recipeService = RecipeService()
     var recipes: [Meal]?
-    weak var coordinator: ApplicationCoordinator?
+    var completion: ((Meal) -> Void)?
+
+//    weak var coordinator: ApplicationCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,6 @@ extension RecipeListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let meal = recipes?[indexPath.row] else { return }
-        coordinator?.viewRecipeDetails(meal: meal)
+        completion?(meal)
     }
 }

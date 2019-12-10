@@ -12,17 +12,20 @@ import UIKit
 class ApplicationCoordinator: Coordinator {
     var navigationController: UINavigationController
     
-   init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        let vc = RecipeListViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        let viewController = RecipeListViewController.instantiate()
+        viewController.completion = { [weak self] selectedMeal in
+            print("--- selected meal: \(selectedMeal.mealName)")
+            self?.startRecipeDetails(meal: selectedMeal)
+        }
+        navigationController.pushViewController(viewController, animated: false)
     }
     
-    func viewRecipeDetails(meal: Meal) {
+    func startRecipeDetails(meal: Meal) {
         let vc = RecipeDetailViewController.instantiate()
         vc.meal = meal
         vc.coordinator = self

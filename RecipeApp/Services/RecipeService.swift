@@ -9,16 +9,17 @@
 import Foundation
 import Alamofire
 
-class RecipeService {
-    
+protocol RecipeServiceProtocol {
+    func fetchData(completion: @escaping ([Meal], Bool) -> Void)
+}
+
+class RecipeService: RecipeServiceProtocol {
     private let URL = "https://www.themealdb.com/api/json/v1/1/search.php?f=c"
     
-    var recipes: Recipe?
-
-    public func fetchData(completion: @escaping ([Meal], Bool) -> Void) {
+    func fetchData(completion: @escaping ([Meal], Bool) -> Void) {
         Alamofire.request(URL, method: .get).responseJSON { response in
             if response.result.isSuccess {
-                guard let data = response.data else {return}
+                guard let data = response.data else { return }
                 if let json = try? JSONDecoder().decode(Recipe.self, from: data) {
                     completion(json.meals, false)
                 } else {

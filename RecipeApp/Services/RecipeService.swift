@@ -21,6 +21,7 @@ class RecipeService: RecipeServiceProtocol {
             if response.result.isSuccess {
                 guard let data = response.data else { return }
                 if let json = try? JSONDecoder().decode(Recipe.self, from: data) {
+                    print(json.meals)
                     completion(json.meals, false)
                 } else {
                     completion([], true)

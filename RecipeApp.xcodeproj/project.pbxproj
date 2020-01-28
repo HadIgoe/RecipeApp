@@ -30,6 +30,7 @@
 		AE744AA1239EBB9A00F414E0 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE744AA0239EBB9A00F414E0 /* ApplicationCoordinator.swift */; };
 		AE8DB39423A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8DB39323A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift */; };
 		AE9DD03B23AD4F4D00651FE0 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DD03A23AD4F4D00651FE0 /* FavoriteService.swift */; };
+		AE9F10A923DF5F9A00939E14 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F10A823DF5F9A00939E14 /* Extension.swift */; };
 		AED78A1F23C512EE001C72F0 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED78A1E23C512EE001C72F0 /* RecipeDetailsViewModel.swift */; };
 		F7BA1EC98A8E111695418170 /* Pods_RecipeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09115154391A539C1B9B4FE4 /* Pods_RecipeApp.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		AE744AA0239EBB9A00F414E0 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		AE8DB39323A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCreatableWithViewModel.swift; sourceTree = "<group>"; };
 		AE9DD03A23AD4F4D00651FE0 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		AE9F10A823DF5F9A00939E14 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AED78A1E23C512EE001C72F0 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		CC320A1218B672134547ADAE /* Pods-RecipeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeApp.release.xcconfig"; path = "Target Support Files/Pods-RecipeApp/Pods-RecipeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,9 +199,7 @@
 		AE517AAA2386CCDB002CFBCC /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
-				AE517AC62386D734002CFBCC /* RecipeHeaderView */,
-				AE8DB39323A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift */,
-				AE517AAB2386CCDB002CFBCC /* AppDelegate.swift */,
+				AE5C7B3E23E0698D006017A5 /* Common */,
 				AE517AB42386CCDC002CFBCC /* Assets.xcassets */,
 				AE517AB92386CCDC002CFBCC /* Info.plist */,
 				AE1600A823A3CE6700FFC580 /* Services */,
@@ -233,6 +233,17 @@
 				AE517ACF2386E682002CFBCC /* RecipeHeaderView.xib */,
 			);
 			path = RecipeHeaderView;
+			sourceTree = "<group>";
+		};
+		AE5C7B3E23E0698D006017A5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AE517AC62386D734002CFBCC /* RecipeHeaderView */,
+				AE8DB39323A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift */,
+				AE517AAB2386CCDB002CFBCC /* AppDelegate.swift */,
+				AE9F10A823DF5F9A00939E14 /* Extension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		AE647D0B23A9175B00361C91 /* RecipeBook */ = {
@@ -429,6 +440,7 @@
 				AE8DB39423A7DE0B00056E3F /* ViewControllerCreatableWithViewModel.swift in Sources */,
 				AE1600AB23A3CEEC00FFC580 /* RecipeListViewModel.swift in Sources */,
 				AE0E5C302386E9CC00E2DB2C /* Recipe.swift in Sources */,
+				AE9F10A923DF5F9A00939E14 /* Extension.swift in Sources */,
 				AE647D1923A93BC400361C91 /* RecipeBookCell.swift in Sources */,
 				AE647D1623A9372400361C91 /* RecipeBookCoordinator.swift in Sources */,
 				AE744A9A239EB13100F414E0 /* Coordinator.swift in Sources */,

@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import LazyImage
 
 class RecipeBookCell: UITableViewCell {
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var favoriteImage: UIImageView!
-    
-    lazy var lazyImage: LazyImage = LazyImage()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +19,7 @@ class RecipeBookCell: UITableViewCell {
     public func configureCell(meal: Meal?) {
         guard let meal = meal else { return favoriteLabel.text = "ERROR" }
         favoriteLabel.text = meal.mealName
-        favoriteImage.image = UIImage(named: "placeholder")
-        lazyImage.show(imageView: favoriteImage, url: meal.mealImage)
+        favoriteImage.loadUsingUrlString(urlString: meal.mealImage)
         layer.borderWidth = 3
         layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = 15

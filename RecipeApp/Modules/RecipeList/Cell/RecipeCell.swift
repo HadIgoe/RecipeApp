@@ -7,17 +7,11 @@
 //
 
 import UIKit
-import LazyImage
-
-//protocol RecipeCellDelegate {
-//    func didTapFavoriteButton(cell: RecipeCell)
-//}
 
 class RecipeCell: UITableViewCell {
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealName: UILabel!
     
-    lazy var lazyImage: LazyImage = LazyImage()
     let starButton = UIButton(type: .system)
     
     var starButtonAction : (() -> ())?
@@ -29,8 +23,7 @@ class RecipeCell: UITableViewCell {
     public func configureCell(meal: Meal?) {
         guard let meal = meal else { return mealName.text = "ERRORRR" }
         mealName.text = meal.mealName
-        self.mealImage.image = UIImage(named: "placeholder")
-        lazyImage.show(imageView: mealImage, url: meal.mealImage)
+        mealImage.loadUsingUrlString(urlString: meal.mealImage)
         layer.borderWidth = 3
         layer.cornerRadius = 15
         layer.borderColor = UIColor.white.cgColor
@@ -56,3 +49,5 @@ class RecipeCell: UITableViewCell {
          starButtonAction?()
     }
 }
+
+

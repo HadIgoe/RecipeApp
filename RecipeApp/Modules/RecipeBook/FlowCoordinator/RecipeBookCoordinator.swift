@@ -36,3 +36,4 @@ class RecipeBookCoordinator: Coordinator {
         recipeDetailsCoordinator.start()
     }
 }
+

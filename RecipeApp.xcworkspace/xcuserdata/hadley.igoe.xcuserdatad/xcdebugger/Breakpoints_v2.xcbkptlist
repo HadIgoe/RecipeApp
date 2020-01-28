@@ -222,8 +222,8 @@
             filePath = "RecipeApp/Modules/RecipeList/Cell/RecipeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "handleMarkAsFavorite()"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,10 +238,10 @@
             filePath = "RecipeApp/Modules/RecipeList/Cell/RecipeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "RecipeCell"
-            landmarkType = "3">
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setUpStar()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -584,14 +584,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CA551B77-EA20-4E75-AF8A-F0239959BD14"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipeApp/Modules/RecipeList/Cell/RecipeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "handleMarkAsFavorite()"
             landmarkType = "7">
          </BreakpointContent>
@@ -600,7 +600,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6ED7DBAF-5FC9-417E-90C5-3B8F5BA35291"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipeApp/Modules/RecipeBook/View/RecipeBookViewController.swift"
@@ -609,6 +609,38 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E90DF85-0B51-43C4-B286-8BA1DE2E3633"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeApp/Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "loadUsingUrlString(urlString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "695BC96B-92E2-4248-BA83-4EFB817E3959"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeApp/Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "loadUsingUrlString(urlString:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

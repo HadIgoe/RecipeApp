@@ -7,7 +7,6 @@ target 'RecipeApp' do
 
   # Pods for RecipeApp
 
-    pod 'SwiftLint'
     pod 'Alamofire'
     pod 'LazyImage'
     
